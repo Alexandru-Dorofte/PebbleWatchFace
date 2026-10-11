@@ -1,0 +1,28 @@
+{
+    "author": "MakeAwesomeHappen",
+    "dependencies": {},
+    "keywords": [
+        "pebble-app"
+    ],
+    "name": "watchface-tutorial",
+    "pebble": {
+        "displayName": "Tutorial Watchface",
+        "enableMultiJS": true,
+        "messageKeys": [],
+        "projectType": "moddable",
+        "resources": {
+            "media": []
+        },
+        "sdkVersion": "3",
+        "targetPlatforms": [
+            "emery",
+            "gabbro"
+        ],
+        "uuid": "7ba00e9e-0d7f-4e46-9197-65e59d051a1a",
+        "watchapp": {
+            "hiddenApp": true,
+            "watchface": true
+        }
+    },
+    "version": "1.0.0"
+}
