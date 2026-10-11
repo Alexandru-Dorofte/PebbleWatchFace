@@ -48,11 +48,15 @@ const MEDIUM = 4;  // battery
 
 let now = new Date();
 
+// sample() only returns a reading once per change (undefined after that),
+// so keep the last known percentage
 const battery = new Battery({
     onSample() {
+        percent = battery.sample().percent;
         draw();
     }
 });
+let percent = battery.sample().percent;
 
 function pad(n) {
     return String(n).padStart(2, "0");
@@ -81,7 +85,7 @@ function draw() {
     const timeStr = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
     const dayStr = DAYS[now.getDay()];
     const dateStr = `${pad(now.getMonth() + 1)}/${pad(now.getDate())}`;
-    const batteryStr = `${battery.sample().percent}%`;
+    const batteryStr = `${percent}%`;
 
     // Three rows spaced evenly from top to bottom
     const heights = [7 * SMALL, 7 * LARGE, 7 * MEDIUM];
